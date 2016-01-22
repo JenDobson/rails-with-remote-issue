@@ -7,7 +7,6 @@ def create
   end
 
   def destroy
-    debugger
     fav = Favorite.find(params[:id])
     @book = Book.find(fav.book_id)
     fav.destroy
