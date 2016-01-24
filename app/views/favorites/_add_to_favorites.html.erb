@@ -1,0 +1,1 @@
+<%= link_to("Add To Favorites", favorites_path(book_id: @book.id, reader_id: @reader.id), :method => 'post', remote: true,  id: "add_remove_favorites_link") %>

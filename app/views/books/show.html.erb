@@ -3,7 +3,17 @@
 <p>
   <strong>Name:</strong>
   <%= @book.name %>
-  <%= favorites_link_for(Reader.last, @book) %>
+  <% if @reader && Favorite.exists?(book_id: @book.id, reader_id: @reader.id) %>
+      <%= render 'favorites/remove_from_favorites' %>
+                                  
+  <% elsif @reader && !Favorite.exists?(book_id: @book.id, reader_id: @reader.id) %>
+      <%= render 'favorites/add_to_favorites' %>
+  <% end %>
+  
+  
+  
+  
+  
 </p>
 
 <%= link_to 'Edit', edit_book_path(@book) %> |

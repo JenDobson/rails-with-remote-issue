@@ -1,0 +1,2 @@
+<%= link_to("Remove From Favorites", favorite_path(Favorite.find_by(book_id: @book.id, reader_id: @reader.id)), :method => 'delete', remote: true, id: "add_remove_favorites_link") %>
+      
